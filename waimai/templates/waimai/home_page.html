@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Prince Benson Waimai</title>
+</head>
+<body>
+ <!-- Site Header -->
+ <h1>Prince Benson Fusion Restaurant</h1>
+
+<!-- Blog Post -->
+ <h2>Tasty Treats To Your Door</h2>
+ <p></p>
+
+<p>The Best Soup Ever</p>
+<img src="http://www.maangchi.com/wp-content/uploads/2014/12/jogaetang.jpg"><br>
+
+<p>Seafood</p>
+<img src="http://weneedfun.com/wp-content/uploads/2015/10/Delicious-Food-Photos-17.jpg"><br>
+
+<p>Hamburger</p>
+<img src="http://www.shaditayari.pk/wp-content/uploads/junk-food-and-its-effects_11-1024x1008.jpg">
+
+<!-- Like And Comment -->
+ <button>Order</button>
+ <h2>What do you want to order? </h2>
+ <form action="{% url 'waimai:home_page' %}" method="POST">
+ {% csrf_token %}
+ <input type="text" placeholder="Please Enter Your address" name="address"><br><br>
+ <textarea name="Order" placeholder="Please Enter Your Order"></textarea><br>
+ <input type="submit" value="Post Me!">
+ </form>
+
+ <h2>Order</h2>
+ Order {{address}} says: {{Order}}
+</body>
+</html>
